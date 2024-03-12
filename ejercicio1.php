@@ -1,20 +1,36 @@
 <?php
-if POST {
-$numero1 = $_POST['numero1'] 
-$numero2 = $_POST['numero2'] 
-echo $numero1
+require ("vista/cabecera.php")
+?>
+<?php
+if($_POST) {
+$number1 = $_POST['number1'];
+$number2 = $_POST['number2'];
+$suma = $number1 + $number2;
+//echo $suma;
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</head>
-<body>
-    
-</body>
-</html>
+<h1>Ejercicio 1. Calcular la Suma</h1>
+<form action="" method="post">
+   <div class="mb-3 row">
+    <label for="number1" class="col-sm-4 col-form-label">Primer Número</label>
+    <div class="col-sm-4">
+      <input type="number" class="form-control" id="number1" name="number1">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="number2" class="col-sm-4 col-form-label">Segundo Número</label>
+    <div class="col-sm-4">
+      <input type="number" class="form-control" id="number2" name="number2">
+    </div>
+  </div>
+     <div>
+      <button type="submit" class="btn btn-primary mb-3">Sumar</button>
+      </div>
+    </form>
+
+  <div class="col-sm-6">
+      <input type="text" class="form-control" id="" value="<?php echo $suma;?>">
+    </div>
+<?php
+require ("vista/pie.php")
+?>
